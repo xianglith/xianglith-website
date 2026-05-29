@@ -20,9 +20,13 @@
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:'Poppins',sans-serif;
-  background:#f5f7fb;
+  background:#f4f7fb;
   color:#1e293b;
   line-height:1.8;
 }
@@ -75,6 +79,12 @@ header{
   margin-left:8px;
   cursor:pointer;
   font-weight:600;
+  transition:0.3s;
+}
+
+.lang button:hover{
+  background:#2563eb;
+  color:white;
 }
 
 nav{
@@ -89,11 +99,16 @@ nav a{
   color:#0f172a;
   margin:0 18px;
   font-weight:600;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#2563eb;
 }
 
 .hero{
   background:
-  linear-gradient(rgba(15,23,42,0.7),rgba(15,23,42,0.7)),
+  linear-gradient(rgba(15,23,42,0.72),rgba(15,23,42,0.72)),
   url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
 
   background-size:cover;
@@ -102,18 +117,19 @@ nav a{
   color:white;
   text-align:center;
 
-  padding:130px 20px;
+  padding:140px 20px;
 }
 
 .hero h1{
-  font-size:54px;
+  font-size:56px;
   margin-bottom:20px;
+  font-weight:700;
 }
 
 .hero p{
-  max-width:900px;
+  max-width:950px;
   margin:auto;
-  font-size:18px;
+  font-size:19px;
   color:#e2e8f0;
 }
 
@@ -126,7 +142,7 @@ nav a{
 .card{
   background:white;
   padding:40px;
-  border-radius:18px;
+  border-radius:20px;
   margin-bottom:35px;
   box-shadow:0 5px 20px rgba(0,0,0,0.06);
 }
@@ -150,6 +166,11 @@ h2{
   border-left:5px solid #2563eb;
   border-radius:12px;
   font-weight:500;
+  transition:0.3s;
+}
+
+.service-box:hover{
+  transform:translateY(-5px);
 }
 
 iframe{
@@ -186,13 +207,25 @@ footer{
     font-size:18px;
   }
 
+  .hero{
+    padding:100px 20px;
+  }
+
   .hero h1{
     font-size:34px;
+  }
+
+  .hero p{
+    font-size:16px;
   }
 
   nav a{
     display:inline-block;
     margin:8px 10px;
+  }
+
+  .card{
+    padding:25px;
   }
 
 }
@@ -269,14 +302,7 @@ About Us
 </h2>
 
 <p id="aboutText">
-
-XIANG LI EMPLOYMENT (THAILAND) CO., LTD.
-is a labor contracting service company dedicated to providing
-high-quality workforce solutions for business operators.
-
-We emphasize efficiency in recruitment and uphold service
-standards with customer satisfaction as our priority.
-
+XIANG LI EMPLOYMENT (THAILAND) CO., LTD. is a professional labor contracting and workforce management company dedicated to providing high-quality workforce solutions for factories and business operators in Thailand. We emphasize efficient recruitment, employee support, and reliable long-term partnerships with our clients.
 </p>
 
 </div>
@@ -293,27 +319,27 @@ Our Services
 
 <div class="services-grid">
 
-<div class="service-box">
+<div class="service-box" id="service1">
 Factory Workforce Recruitment
 </div>
 
-<div class="service-box">
+<div class="service-box" id="service2">
 Foreign Worker Import Services
 </div>
 
-<div class="service-box">
+<div class="service-box" id="service3">
 Visa & Work Permit Processing
 </div>
 
-<div class="service-box">
+<div class="service-box" id="service4">
 HR & Labor Management Support
 </div>
 
-<div class="service-box">
+<div class="service-box" id="service5">
 Worker Transportation & Accommodation
 </div>
 
-<div class="service-box">
+<div class="service-box" id="service6">
 Translation & 24 Hour Assistance
 </div>
 
@@ -357,12 +383,12 @@ Contact Us
 </h2>
 
 <div class="contact-item">
-<strong>Email:</strong>
+<strong id="emailLabel">Email:</strong>
 official@xianglith.com
 </div>
 
 <div class="contact-item">
-<strong>Tel:</strong>
+<strong id="telLabel">Tel:</strong>
 081-727-8428 , 062-197-8666
 </div>
 
@@ -371,7 +397,7 @@ official@xianglith.com
 s15370055518
 </div>
 
-<div class="contact-item">
+<div class="contact-item" id="addressText">
 <strong>Address:</strong><br>
 123/715 Moo 3, Bo Win Subdistrict,<br>
 Si Racha District, Chonburi 20230 Thailand
@@ -391,7 +417,7 @@ loading="lazy">
 
 </div>
 
-<footer>
+<footer id="footerText">
 © 2026 XIANG LI EMPLOYMENT (THAILAND) CO., LTD.
 </footer>
 
@@ -414,15 +440,29 @@ heroText:"Providing workforce recruitment, labor management, foreign worker serv
 
 aboutTitle:"About Us",
 
-aboutText:"XIANG LI EMPLOYMENT (THAILAND) CO., LTD. is a labor contracting service company dedicated to providing high-quality workforce solutions for business operators. We emphasize efficiency in recruitment and uphold service standards with customer satisfaction as our priority.",
+aboutText:"XIANG LI EMPLOYMENT (THAILAND) CO., LTD. is a professional labor contracting and workforce management company dedicated to providing high-quality workforce solutions for factories and business operators in Thailand. We emphasize efficient recruitment, employee support, and reliable long-term partnerships with our clients.",
 
 servicesTitle:"Our Services",
+
+service1:"Factory Workforce Recruitment",
+service2:"Foreign Worker Import Services",
+service3:"Visa & Work Permit Processing",
+service4:"HR & Labor Management Support",
+service5:"Worker Transportation & Accommodation",
+service6:"Translation & 24 Hour Assistance",
 
 presentationTitle:"Company Presentation",
 
 presentationText:"Company profile and presentation slides.",
 
-contactTitle:"Contact Us"
+contactTitle:"Contact Us",
+
+emailLabel:"Email:",
+telLabel:"Tel:",
+
+addressText:"<strong>Address:</strong><br>123/715 Moo 3, Bo Win Subdistrict,<br>Si Racha District, Chonburi 20230 Thailand",
+
+footerText:"© 2026 XIANG LI EMPLOYMENT (THAILAND) CO., LTD."
 
 },
 
@@ -435,21 +475,35 @@ navServices:"บริการ",
 navPresentation:"พรีเซนเทชั่น",
 navContact:"ติดต่อ",
 
-heroTitle:"บริการจัดหางานระดับมืออาชีพ",
+heroTitle:"บริการจัดหาแรงงานระดับมืออาชีพ",
 
-heroText:"ให้บริการจัดหาแรงงาน บริหารแรงงานต่างด้าว และสนับสนุนงานอุตสาหกรรมอย่างมืออาชีพ",
+heroText:"ให้บริการจัดหาแรงงาน บริหารแรงงานต่างด้าว และสนับสนุนงานอุตสาหกรรมอย่างครบวงจร ด้วยความเป็นมืออาชีพและเชื่อถือได้",
 
 aboutTitle:"เกี่ยวกับเรา",
 
-aboutText:"บริษัท เซียงลี่ เอ็มพลอยเม้นท์ (ประเทศไทย) จำกัด เป็นบริษัทให้บริการจัดหาและบริหารแรงงานอย่างมืออาชีพ มุ่งเน้นการสรรหาบุคลากรที่มีคุณภาพและตอบโจทย์ความต้องการของลูกค้า",
+aboutText:"บริษัท เซียงลี่ เอ็มพลอยเม้นท์ (ประเทศไทย) จำกัด เป็นบริษัทผู้ให้บริการจัดหาแรงงานและบริหารแรงงานอย่างมืออาชีพ มุ่งเน้นการจัดหาบุคลากรที่มีคุณภาพให้กับโรงงานและผู้ประกอบการในประเทศไทย พร้อมให้บริการอย่างมีประสิทธิภาพและสร้างความร่วมมือระยะยาวกับลูกค้า",
 
 servicesTitle:"บริการของเรา",
 
+service1:"บริการจัดหาแรงงานโรงงาน",
+service2:"บริการนำเข้าแรงงานต่างด้าว",
+service3:"บริการวีซ่าและใบอนุญาตทำงาน",
+service4:"บริการบริหารแรงงานและ HR",
+service5:"บริการที่พักและรถรับส่งพนักงาน",
+service6:"บริการล่ามและช่วยเหลือ 24 ชั่วโมง",
+
 presentationTitle:"พรีเซนเทชั่นบริษัท",
 
-presentationText:"ข้อมูลบริษัทและสไลด์นำเสนอ",
+presentationText:"ข้อมูลบริษัทและเอกสารนำเสนอ",
 
-contactTitle:"ติดต่อเรา"
+contactTitle:"ติดต่อเรา",
+
+emailLabel:"อีเมล:",
+telLabel:"โทร:",
+
+addressText:"<strong>ที่อยู่:</strong><br>123/715 หมู่ 3 ตำบลบ่อวิน<br>อำเภอศรีราชา จังหวัดชลบุรี 20230 ประเทศไทย",
+
+footerText:"© 2026 บริษัท เซียงลี่ เอ็มพลอยเม้นท์ (ประเทศไทย) จำกัด"
 
 },
 
@@ -458,25 +512,39 @@ cn:{
 subtitle:"专业劳务与人力资源解决方案",
 
 navAbout:"关于我们",
-navServices:"服务",
+navServices:"服务项目",
 navPresentation:"公司介绍",
-navContact:"联系",
+navContact:"联系我们",
 
 heroTitle:"专业劳务解决方案",
 
-heroText:"提供劳动力招聘、外籍劳工管理和工业支持服务",
+heroText:"为企业提供劳动力招聘、外籍劳工管理及工业支持服务，以专业与可靠的方式满足客户需求。",
 
 aboutTitle:"关于我们",
 
-aboutText:"祥利（泰国）职业介绍有限公司是一家专业劳务与人力资源服务公司，致力于为企业提供高质量劳动力解决方案。",
+aboutText:"祥利（泰国）职业介绍有限公司是一家专业劳务与人力资源管理公司，致力于为泰国工厂及企业提供高质量劳动力解决方案。我们注重高效招聘、员工管理以及与客户建立长期稳定的合作关系。",
 
 servicesTitle:"我们的服务",
+
+service1:"工厂劳动力招聘",
+service2:"外籍劳工引进服务",
+service3:"签证与工作证办理",
+service4:"人力资源与劳工管理",
+service5:"员工住宿与接送服务",
+service6:"翻译与24小时协助服务",
 
 presentationTitle:"公司介绍",
 
 presentationText:"公司资料与演示文稿",
 
-contactTitle:"联系我们"
+contactTitle:"联系我们",
+
+emailLabel:"邮箱:",
+telLabel:"电话:",
+
+addressText:"<strong>地址：</strong><br>泰国春武里府是拉差县博温分区<br>123/715，村3，邮编20230",
+
+footerText:"© 2026 祥利（泰国）职业介绍有限公司"
 
 }
 
@@ -484,44 +552,39 @@ contactTitle:"联系我们"
 
 function setLang(lang){
 
-document.getElementById("subtitle").innerHTML =
-translations[lang].subtitle;
+document.getElementById("subtitle").innerHTML = translations[lang].subtitle;
 
-document.getElementById("navAbout").innerHTML =
-translations[lang].navAbout;
+document.getElementById("navAbout").innerHTML = translations[lang].navAbout;
+document.getElementById("navServices").innerHTML = translations[lang].navServices;
+document.getElementById("navPresentation").innerHTML = translations[lang].navPresentation;
+document.getElementById("navContact").innerHTML = translations[lang].navContact;
 
-document.getElementById("navServices").innerHTML =
-translations[lang].navServices;
+document.getElementById("heroTitle").innerHTML = translations[lang].heroTitle;
+document.getElementById("heroText").innerHTML = translations[lang].heroText;
 
-document.getElementById("navPresentation").innerHTML =
-translations[lang].navPresentation;
+document.getElementById("aboutTitle").innerHTML = translations[lang].aboutTitle;
+document.getElementById("aboutText").innerHTML = translations[lang].aboutText;
 
-document.getElementById("navContact").innerHTML =
-translations[lang].navContact;
+document.getElementById("servicesTitle").innerHTML = translations[lang].servicesTitle;
 
-document.getElementById("heroTitle").innerHTML =
-translations[lang].heroTitle;
+document.getElementById("service1").innerHTML = translations[lang].service1;
+document.getElementById("service2").innerHTML = translations[lang].service2;
+document.getElementById("service3").innerHTML = translations[lang].service3;
+document.getElementById("service4").innerHTML = translations[lang].service4;
+document.getElementById("service5").innerHTML = translations[lang].service5;
+document.getElementById("service6").innerHTML = translations[lang].service6;
 
-document.getElementById("heroText").innerHTML =
-translations[lang].heroText;
+document.getElementById("presentationTitle").innerHTML = translations[lang].presentationTitle;
+document.getElementById("presentationText").innerHTML = translations[lang].presentationText;
 
-document.getElementById("aboutTitle").innerHTML =
-translations[lang].aboutTitle;
+document.getElementById("contactTitle").innerHTML = translations[lang].contactTitle;
 
-document.getElementById("aboutText").innerHTML =
-translations[lang].aboutText;
+document.getElementById("emailLabel").innerHTML = translations[lang].emailLabel;
+document.getElementById("telLabel").innerHTML = translations[lang].telLabel;
 
-document.getElementById("servicesTitle").innerHTML =
-translations[lang].servicesTitle;
+document.getElementById("addressText").innerHTML = translations[lang].addressText;
 
-document.getElementById("presentationTitle").innerHTML =
-translations[lang].presentationTitle;
-
-document.getElementById("presentationText").innerHTML =
-translations[lang].presentationText;
-
-document.getElementById("contactTitle").innerHTML =
-translations[lang].contactTitle;
+document.getElementById("footerText").innerHTML = translations[lang].footerText;
 
 }
 
