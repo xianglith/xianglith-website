@@ -172,14 +172,23 @@ h2{
   transform:translateY(-5px);
 }
 
+.slideshow-container{
+  margin-top:30px;
+  overflow:hidden;
+  border-radius:20px;
+}
+
+.slideshow-container img{
+  width:100%;
+  display:block;
+  border-radius:20px;
+  transition:opacity 1s ease-in-out;
+}
+
 iframe{
   width:100%;
   border:none;
   border-radius:15px;
-}
-
-.ppt-box{
-  margin-top:25px;
 }
 
 .contact-item{
@@ -360,12 +369,10 @@ Company Presentation
 Company profile and presentation slides.
 </p>
 
-<div class="ppt-box">
+<div class="slideshow-container">
 
-<iframe
-src="company-profile.pdf"
-height="650">
-</iframe>
+<img id="slideShow"
+src="slides/slide1.jpg">
 
 </div>
 
@@ -382,12 +389,12 @@ Contact Us
 </h2>
 
 <div class="contact-item">
-<strong id="emailLabel">Email:</strong>
+<strong>Email:</strong>
 official@xianglith.com
 </div>
 
 <div class="contact-item">
-<strong id="telLabel">Tel:</strong>
+<strong>Tel:</strong>
 081-727-8428 , 062-197-8666
 </div>
 
@@ -396,7 +403,7 @@ official@xianglith.com
 s15370055518
 </div>
 
-<div class="contact-item" id="addressText">
+<div class="contact-item">
 <strong>Address:</strong><br>
 123/715 Moo 3, Bo Win Subdistrict,<br>
 Si Racha District, Chonburi 20230 Thailand
@@ -425,6 +432,28 @@ referrerpolicy="no-referrer-when-downgrade">
 
 <script>
 
+const slides = [
+  "slides/slide1.jpg",
+  "slides/slide2.jpg",
+  "slides/slide3.jpg",
+  "slides/slide4.jpg"
+];
+
+let currentSlide = 0;
+
+setInterval(() => {
+
+  currentSlide++;
+
+  if(currentSlide >= slides.length){
+    currentSlide = 0;
+  }
+
+  document.getElementById("slideShow").src =
+  slides[currentSlide];
+
+}, 3000);
+
 const translations = {
 
 en:{
@@ -447,9 +476,6 @@ service6:"Translation & 24 Hour Assistance",
 presentationTitle:"Company Presentation",
 presentationText:"Company profile and presentation slides.",
 contactTitle:"Contact Us",
-emailLabel:"Email:",
-telLabel:"Tel:",
-addressText:"<strong>Address:</strong><br>123/715 Moo 3, Bo Win Subdistrict,<br>Si Racha District, Chonburi 20230 Thailand",
 footerText:"© 2026 XIANG LI EMPLOYMENT (THAILAND) CO., LTD."
 },
 
@@ -473,9 +499,6 @@ service6:"บริการล่ามและช่วยเหลือ 24 
 presentationTitle:"พรีเซนเทชั่นบริษัท",
 presentationText:"ข้อมูลบริษัทและเอกสารนำเสนอ",
 contactTitle:"ติดต่อเรา",
-emailLabel:"อีเมล:",
-telLabel:"โทร:",
-addressText:"<strong>ที่อยู่:</strong><br>123/715 หมู่ 3 ตำบลบ่อวิน<br>อำเภอศรีราชา จังหวัดชลบุรี 20230 ประเทศไทย",
 footerText:"© 2026 บริษัท เซียงลี่ เอ็มพลอยเม้นท์ (ประเทศไทย) จำกัด"
 },
 
@@ -499,9 +522,6 @@ service6:"翻译与24小时协助服务",
 presentationTitle:"公司介绍",
 presentationText:"公司资料与演示文稿",
 contactTitle:"联系我们",
-emailLabel:"邮箱:",
-telLabel:"电话:",
-addressText:"<strong>地址：</strong><br>泰国春武里府是拉差县博温分区<br>123/715，村3，邮编20230",
 footerText:"© 2026 祥利（泰国）职业介绍有限公司"
 }
 
@@ -536,11 +556,6 @@ document.getElementById("presentationText").innerHTML = translations[lang].prese
 
 document.getElementById("contactTitle").innerHTML = translations[lang].contactTitle;
 
-document.getElementById("emailLabel").innerHTML = translations[lang].emailLabel;
-document.getElementById("telLabel").innerHTML = translations[lang].telLabel;
-
-document.getElementById("addressText").innerHTML = translations[lang].addressText;
-
 document.getElementById("footerText").innerHTML = translations[lang].footerText;
 
 }
@@ -549,4 +564,3 @@ document.getElementById("footerText").innerHTML = translations[lang].footerText;
 
 </body>
 </html>
-```
