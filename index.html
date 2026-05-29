@@ -1,398 +1,527 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>XIANG LI EMPLOYMENT (THAILAND) CO., LTD.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>XIANG LI EMPLOYMENT (THAILAND) CO., LTD.</title>
 
-  <style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+<style>
 
-    body{
-      font-family:'Poppins',sans-serif;
-      background:#f5f7fb;
-      color:#222;
-      line-height:1.7;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    header{
-      background:#0f172a;
-      color:white;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      box-shadow:0 2px 10px rgba(0,0,0,0.15);
-    }
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f5f7fb;
+  color:#1e293b;
+  line-height:1.8;
+}
 
-    .topbar{
-      max-width:1300px;
-      margin:auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:18px 25px;
-    }
+header{
+  background:#0f172a;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.15);
+}
 
-    .logo-area{
-      display:flex;
-      align-items:center;
-      gap:18px;
-    }
+.topbar{
+  max-width:1300px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 25px;
+}
 
-    .logo-area img{
-      width:80px;
-      height:auto;
-    }
+.logo-section{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
 
-    .company-name{
-      font-size:24px;
-      font-weight:700;
-      line-height:1.3;
-      letter-spacing:0.5px;
-    }
+.logo-section img{
+  width:85px;
+}
 
-    .company-sub{
-      font-size:13px;
-      color:#cbd5e1;
-      margin-top:4px;
-    }
+.company-title{
+  font-size:24px;
+  font-weight:700;
+  line-height:1.4;
+}
 
-    .lang button{
-      background:white;
-      color:#0f172a;
-      border:none;
-      padding:8px 14px;
-      margin-left:8px;
-      border-radius:8px;
-      cursor:pointer;
-      font-weight:600;
-    }
+.company-sub{
+  color:#cbd5e1;
+  font-size:13px;
+}
 
-    nav{
-      background:white;
-      text-align:center;
-      padding:16px;
-      border-bottom:1px solid #e5e7eb;
-    }
+.lang button{
+  border:none;
+  background:white;
+  color:#0f172a;
+  padding:8px 14px;
+  border-radius:8px;
+  margin-left:8px;
+  cursor:pointer;
+  font-weight:600;
+}
 
-    nav a{
-      color:#111827;
-      text-decoration:none;
-      margin:0 18px;
-      font-weight:600;
-      transition:0.3s;
-    }
+nav{
+  background:white;
+  text-align:center;
+  padding:16px;
+  border-bottom:1px solid #e2e8f0;
+}
 
-    nav a:hover{
-      color:#2563eb;
-    }
+nav a{
+  text-decoration:none;
+  color:#0f172a;
+  margin:0 18px;
+  font-weight:600;
+}
 
-    .hero{
-      background:
-      linear-gradient(rgba(15,23,42,0.7),rgba(15,23,42,0.7)),
-      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
-      background-size:cover;
-      background-position:center;
-      color:white;
-      text-align:center;
-      padding:120px 20px;
-    }
+.hero{
+  background:
+  linear-gradient(rgba(15,23,42,0.7),rgba(15,23,42,0.7)),
+  url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
 
-    .hero h1{
-      font-size:52px;
-      margin-bottom:20px;
-      font-weight:700;
-    }
+  background-size:cover;
+  background-position:center;
 
-    .hero p{
-      max-width:900px;
-      margin:auto;
-      font-size:18px;
-      color:#e2e8f0;
-    }
+  color:white;
+  text-align:center;
 
-    .container{
-      max-width:1200px;
-      margin:auto;
-      padding:60px 20px;
-    }
+  padding:130px 20px;
+}
 
-    .card{
-      background:white;
-      padding:40px;
-      border-radius:18px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.06);
-      margin-bottom:35px;
-    }
+.hero h1{
+  font-size:54px;
+  margin-bottom:20px;
+}
 
-    h2{
-      font-size:32px;
-      margin-bottom:25px;
-      color:#0f172a;
-    }
+.hero p{
+  max-width:900px;
+  margin:auto;
+  font-size:18px;
+  color:#e2e8f0;
+}
 
-    .services-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-      margin-top:25px;
-    }
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px;
+}
 
-    .service-box{
-      background:#f8fafc;
-      border-left:5px solid #2563eb;
-      padding:25px;
-      border-radius:12px;
-    }
+.card{
+  background:white;
+  padding:40px;
+  border-radius:18px;
+  margin-bottom:35px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.06);
+}
 
-    .ppt-box{
-      margin-top:30px;
-      overflow:hidden;
-      border-radius:15px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.1);
-    }
+h2{
+  font-size:34px;
+  margin-bottom:25px;
+  color:#0f172a;
+}
 
-    iframe{
-      width:100%;
-      border:none;
-    }
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
 
-    footer{
-      background:#0f172a;
-      color:white;
-      text-align:center;
-      padding:35px 20px;
-      margin-top:60px;
-    }
+.service-box{
+  background:#f8fafc;
+  padding:25px;
+  border-left:5px solid #2563eb;
+  border-radius:12px;
+  font-weight:500;
+}
 
-    @media(max-width:768px){
+iframe{
+  width:100%;
+  border:none;
+  border-radius:15px;
+}
 
-      .topbar{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:20px;
-      }
+.ppt-box{
+  margin-top:25px;
+}
 
-      .company-name{
-        font-size:18px;
-      }
+.contact-item{
+  margin-bottom:14px;
+}
 
-      .hero h1{
-        font-size:34px;
-      }
+footer{
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  padding:35px 20px;
+  margin-top:50px;
+}
 
-      nav a{
-        display:inline-block;
-        margin:8px 10px;
-      }
+@media(max-width:768px){
 
-    }
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+  }
 
-  </style>
+  .company-title{
+    font-size:18px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  nav a{
+    display:inline-block;
+    margin:8px 10px;
+  }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
 <header>
 
-  <div class="topbar">
+<div class="topbar">
 
-    <div class="logo-area">
+<div class="logo-section">
 
-      <img src="XIANG LI LOGO.png">
+<img src="XIANG LI LOGO.png">
 
-      <div>
-        <div class="company-name">
-          XIANG LI EMPLOYMENT (THAILAND) CO., LTD.
-        </div>
+<div>
 
-        <div class="company-sub">
-          Professional Workforce & Employment Solutions
-        </div>
-      </div>
+<div class="company-title">
+XIANG LI EMPLOYMENT (THAILAND) CO., LTD.
+</div>
 
-    </div>
+<div class="company-sub" id="subtitle">
+Professional Workforce & Employment Solutions
+</div>
 
-    <div class="lang">
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('th')">TH</button>
-      <button onclick="setLang('cn')">中文</button>
-    </div>
+</div>
 
-  </div>
+</div>
+
+<div class="lang">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('th')">TH</button>
+<button onclick="setLang('cn')">中文</button>
+</div>
+
+</div>
 
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#presentation">Presentation</a>
-  <a href="#contact">Contact</a>
+
+<a href="#about" id="navAbout">About</a>
+<a href="#services" id="navServices">Services</a>
+<a href="#presentation" id="navPresentation">Presentation</a>
+<a href="#contact" id="navContact">Contact</a>
+
 </nav>
 
 <section class="hero">
 
-  <h1>Professional Employment Solutions</h1>
+<h1 id="heroTitle">
+Professional Employment Solutions
+</h1>
 
-  <p>
-    Providing workforce recruitment, labor management,
-    foreign worker services, and industrial employment support
-    with professionalism and reliability.
-  </p>
+<p id="heroText">
+Providing workforce recruitment, labor management,
+foreign worker services, and industrial employment support
+with professionalism and reliability.
+</p>
 
 </section>
 
 <div class="container">
 
-  <section id="about">
+<section id="about">
 
-    <div class="card">
+<div class="card">
 
-      <h2>About Us</h2>
+<h2 id="aboutTitle">
+About Us
+</h2>
 
-      <p>
-        XIANG LI EMPLOYMENT (THAILAND) CO., LTD.
-        is a professional labor contracting and workforce management company
-        dedicated to providing high-quality recruitment services and
-        employment solutions for industrial and business sectors in Thailand.
-      </p>
+<p id="aboutText">
 
-      <br>
+XIANG LI EMPLOYMENT (THAILAND) CO., LTD.
+is a labor contracting service company dedicated to providing
+high-quality workforce solutions for business operators.
 
-      <p>
-        We focus on rapid recruitment, fair employment practices,
-        employee support, and long-term business partnerships.
-      </p>
+We emphasize efficiency in recruitment and uphold service
+standards with customer satisfaction as our priority.
 
-    </div>
+</p>
 
-  </section>
+</div>
 
-  <section id="services">
+</section>
 
-    <div class="card">
+<section id="services">
 
-      <h2>Our Services</h2>
+<div class="card">
 
-      <div class="services-grid">
+<h2 id="servicesTitle">
+Our Services
+</h2>
 
-        <div class="service-box">
-          Workforce Recruitment
-        </div>
+<div class="services-grid">
 
-        <div class="service-box">
-          Foreign Worker Import Services
-        </div>
+<div class="service-box">
+Factory Workforce Recruitment
+</div>
 
-        <div class="service-box">
-          Visa & Work Permit Processing
-        </div>
+<div class="service-box">
+Foreign Worker Import Services
+</div>
 
-        <div class="service-box">
-          HR & Labor Management Support
-        </div>
+<div class="service-box">
+Visa & Work Permit Processing
+</div>
 
-        <div class="service-box">
-          Worker Transportation & Accommodation
-        </div>
+<div class="service-box">
+HR & Labor Management Support
+</div>
 
-        <div class="service-box">
-          Translation & 24 Hour Assistance
-        </div>
+<div class="service-box">
+Worker Transportation & Accommodation
+</div>
 
-      </div>
+<div class="service-box">
+Translation & 24 Hour Assistance
+</div>
 
-    </div>
+</div>
 
-  </section>
+</div>
 
-  <section id="presentation">
+</section>
 
-    <div class="card">
+<section id="presentation">
 
-      <h2>Company Presentation</h2>
+<div class="card">
 
-      <p>
-        You can upload your PowerPoint presentation and display it here.
-      </p>
+<h2 id="presentationTitle">
+Company Presentation
+</h2>
 
-      <div class="ppt-box">
+<p id="presentationText">
+Company profile and presentation slides.
+</p>
 
-        <!-- REPLACE THIS LINK WITH YOUR PPT PDF -->
+<div class="ppt-box">
 
-        <iframe
-          src="your-presentation.pdf"
-          height="600">
-        </iframe>
+<iframe
+src="company-profile.pdf"
+height="650">
+</iframe>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-  </section>
+</section>
 
-  <section id="contact">
+<section id="contact">
 
-    <div class="card">
+<div class="card">
 
-      <h2>Contact Us</h2>
+<h2 id="contactTitle">
+Contact Us
+</h2>
 
-      <p>
-        <strong>Email:</strong>
-        official@xianglith.com
-      </p>
+<div class="contact-item">
+<strong>Email:</strong>
+official@xianglith.com
+</div>
 
-      <p>
-        <strong>Tel:</strong>
-        081-727-8428 , 062-197-8666
-      </p>
+<div class="contact-item">
+<strong>Tel:</strong>
+081-727-8428 , 062-197-8666
+</div>
 
-      <p>
-        <strong>WeChat ID:</strong>
-        s15370055518
-      </p>
+<div class="contact-item">
+<strong>WeChat ID:</strong>
+s15370055518
+</div>
 
-      <br>
+<div class="contact-item">
+<strong>Address:</strong><br>
+123/715 Moo 3, Bo Win Subdistrict,<br>
+Si Racha District, Chonburi 20230 Thailand
+</div>
 
-      <p>
-        XIANG LI EMPLOYMENT (THAILAND) CO., LTD.<br>
-        123/715 Moo 3, Bo Win Subdistrict,<br>
-        Si Racha District, Chonburi 20230 Thailand
-      </p>
+<br>
 
-      <br>
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.082634392112!2d101.10046050000001!3d13.030409600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102c50050490b7d%3A0x879cbff411166a3f!2sXIANG%20LI%20(THAILAND)!5e0!3m2!1sen!2sth!4v1780040415309!5m2!1sen!2sth"
+height="350"
+loading="lazy">
+</iframe>
 
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.082634392112!2d101.10046050000001!3d13.030409600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102c50050490b7d%3A0x879cbff411166a3f!2sXIANG%20LI%20(THAILAND)!5e0!3m2!1sen!2sth!4v1780040415309!5m2!1sen!2sth"
-        height="350"
-        loading="lazy">
-      </iframe>
+</div>
 
-    </div>
-
-  </section>
+</section>
 
 </div>
 
 <footer>
-  © 2026 XIANG LI EMPLOYMENT (THAILAND) CO., LTD.
+© 2026 XIANG LI EMPLOYMENT (THAILAND) CO., LTD.
 </footer>
 
 <script>
 
+const translations = {
+
+en:{
+
+subtitle:"Professional Workforce & Employment Solutions",
+
+navAbout:"About",
+navServices:"Services",
+navPresentation:"Presentation",
+navContact:"Contact",
+
+heroTitle:"Professional Employment Solutions",
+
+heroText:"Providing workforce recruitment, labor management, foreign worker services, and industrial employment support with professionalism and reliability.",
+
+aboutTitle:"About Us",
+
+aboutText:"XIANG LI EMPLOYMENT (THAILAND) CO., LTD. is a labor contracting service company dedicated to providing high-quality workforce solutions for business operators. We emphasize efficiency in recruitment and uphold service standards with customer satisfaction as our priority.",
+
+servicesTitle:"Our Services",
+
+presentationTitle:"Company Presentation",
+
+presentationText:"Company profile and presentation slides.",
+
+contactTitle:"Contact Us"
+
+},
+
+th:{
+
+subtitle:"บริการจัดหาแรงงานและบริหารแรงงานมืออาชีพ",
+
+navAbout:"เกี่ยวกับเรา",
+navServices:"บริการ",
+navPresentation:"พรีเซนเทชั่น",
+navContact:"ติดต่อ",
+
+heroTitle:"บริการจัดหางานระดับมืออาชีพ",
+
+heroText:"ให้บริการจัดหาแรงงาน บริหารแรงงานต่างด้าว และสนับสนุนงานอุตสาหกรรมอย่างมืออาชีพ",
+
+aboutTitle:"เกี่ยวกับเรา",
+
+aboutText:"บริษัท เซียงลี่ เอ็มพลอยเม้นท์ (ประเทศไทย) จำกัด เป็นบริษัทให้บริการจัดหาและบริหารแรงงานอย่างมืออาชีพ มุ่งเน้นการสรรหาบุคลากรที่มีคุณภาพและตอบโจทย์ความต้องการของลูกค้า",
+
+servicesTitle:"บริการของเรา",
+
+presentationTitle:"พรีเซนเทชั่นบริษัท",
+
+presentationText:"ข้อมูลบริษัทและสไลด์นำเสนอ",
+
+contactTitle:"ติดต่อเรา"
+
+},
+
+cn:{
+
+subtitle:"专业劳务与人力资源解决方案",
+
+navAbout:"关于我们",
+navServices:"服务",
+navPresentation:"公司介绍",
+navContact:"联系",
+
+heroTitle:"专业劳务解决方案",
+
+heroText:"提供劳动力招聘、外籍劳工管理和工业支持服务",
+
+aboutTitle:"关于我们",
+
+aboutText:"祥利（泰国）职业介绍有限公司是一家专业劳务与人力资源服务公司，致力于为企业提供高质量劳动力解决方案。",
+
+servicesTitle:"我们的服务",
+
+presentationTitle:"公司介绍",
+
+presentationText:"公司资料与演示文稿",
+
+contactTitle:"联系我们"
+
+}
+
+};
+
 function setLang(lang){
 
-  alert("Multi-language full version can be added next step.");
+document.getElementById("subtitle").innerHTML =
+translations[lang].subtitle;
+
+document.getElementById("navAbout").innerHTML =
+translations[lang].navAbout;
+
+document.getElementById("navServices").innerHTML =
+translations[lang].navServices;
+
+document.getElementById("navPresentation").innerHTML =
+translations[lang].navPresentation;
+
+document.getElementById("navContact").innerHTML =
+translations[lang].navContact;
+
+document.getElementById("heroTitle").innerHTML =
+translations[lang].heroTitle;
+
+document.getElementById("heroText").innerHTML =
+translations[lang].heroText;
+
+document.getElementById("aboutTitle").innerHTML =
+translations[lang].aboutTitle;
+
+document.getElementById("aboutText").innerHTML =
+translations[lang].aboutText;
+
+document.getElementById("servicesTitle").innerHTML =
+translations[lang].servicesTitle;
+
+document.getElementById("presentationTitle").innerHTML =
+translations[lang].presentationTitle;
+
+document.getElementById("presentationText").innerHTML =
+translations[lang].presentationText;
+
+document.getElementById("contactTitle").innerHTML =
+translations[lang].contactTitle;
 
 }
 
