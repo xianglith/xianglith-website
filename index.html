@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,10 +56,15 @@
       margin-top:50px;
     }
 
-    .lang{
-      margin-top:20px;
-      font-size:14px;
+    .lang button{
+      margin:5px;
+      padding:8px 15px;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+      font-weight:bold;
     }
+
   </style>
 </head>
 
@@ -67,23 +72,25 @@
 
 <header>
   <h1>XIANGLITH</h1>
-  <p>Modern Corporate Website</p>
+  <p id="subtitle">Modern Corporate Website</p>
 
   <div class="lang">
-    ไทย | English | 中文
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('th')">ไทย</button>
+    <button onclick="setLang('cn')">中文</button>
   </div>
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
+  <a href="#about" id="navAbout">About</a>
+  <a href="#services" id="navServices">Services</a>
+  <a href="#contact" id="navContact">Contact</a>
 </nav>
 
 <section id="about">
   <div class="card">
-    <h2>About Us</h2>
-    <p>
+    <h2 id="aboutTitle">About Us</h2>
+    <p id="aboutText">
       Xianglith is a professional company providing high quality services and solutions.
     </p>
   </div>
@@ -91,8 +98,8 @@
 
 <section id="services">
   <div class="card">
-    <h2>Services</h2>
-    <p>
+    <h2 id="servicesTitle">Services</h2>
+    <p id="servicesText">
       • Industrial Services<br>
       • Manufacturing<br>
       • International Business
@@ -102,8 +109,8 @@
 
 <section id="contact">
   <div class="card">
-    <h2>Contact</h2>
-    <p>
+    <h2 id="contactTitle">Contact</h2>
+    <p id="contactText">
       Email: info@xianglith.com
     </p>
   </div>
@@ -112,6 +119,68 @@
 <footer>
   © 2026 Xianglith. All rights reserved.
 </footer>
+
+<script>
+
+function setLang(lang){
+
+  const data = {
+
+    en:{
+      subtitle:"Modern Corporate Website",
+      navAbout:"About",
+      navServices:"Services",
+      navContact:"Contact",
+      aboutTitle:"About Us",
+      aboutText:"Xianglith is a professional company providing high quality services and solutions.",
+      servicesTitle:"Services",
+      servicesText:"• Industrial Services<br>• Manufacturing<br>• International Business",
+      contactTitle:"Contact",
+      contactText:"Email: info@xianglith.com"
+    },
+
+    th:{
+      subtitle:"เว็บไซต์บริษัท",
+      navAbout:"เกี่ยวกับเรา",
+      navServices:"บริการ",
+      navContact:"ติดต่อ",
+      aboutTitle:"เกี่ยวกับเรา",
+      aboutText:"Xianglith เป็นบริษัทมืออาชีพที่ให้บริการและโซลูชันคุณภาพสูง",
+      servicesTitle:"บริการ",
+      servicesText:"• บริการอุตสาหกรรม<br>• การผลิต<br>• ธุรกิจระหว่างประเทศ",
+      contactTitle:"ติดต่อ",
+      contactText:"อีเมล: info@xianglith.com"
+    },
+
+    cn:{
+      subtitle:"现代企业网站",
+      navAbout:"关于我们",
+      navServices:"服务",
+      navContact:"联系",
+      aboutTitle:"关于我们",
+      aboutText:"Xianglith 是一家提供高质量服务和解决方案的专业公司。",
+      servicesTitle:"服务",
+      servicesText:"• 工业服务<br>• 制造业<br>• 国际业务",
+      contactTitle:"联系",
+      contactText:"邮箱: info@xianglith.com"
+    }
+
+  };
+
+  document.getElementById("subtitle").innerHTML = data[lang].subtitle;
+  document.getElementById("navAbout").innerHTML = data[lang].navAbout;
+  document.getElementById("navServices").innerHTML = data[lang].navServices;
+  document.getElementById("navContact").innerHTML = data[lang].navContact;
+  document.getElementById("aboutTitle").innerHTML = data[lang].aboutTitle;
+  document.getElementById("aboutText").innerHTML = data[lang].aboutText;
+  document.getElementById("servicesTitle").innerHTML = data[lang].servicesTitle;
+  document.getElementById("servicesText").innerHTML = data[lang].servicesText;
+  document.getElementById("contactTitle").innerHTML = data[lang].contactTitle;
+  document.getElementById("contactText").innerHTML = data[lang].contactText;
+
+}
+
+</script>
 
 </body>
 </html>
