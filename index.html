@@ -91,18 +91,48 @@ nav{
   text-align:center;
   padding:16px;
   border-bottom:1px solid #e2e8f0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
 }
 
 nav a{
   text-decoration:none;
   color:#0f172a;
-  margin:0 18px;
+  margin:0 10px;
   font-weight:600;
   transition:0.3s;
 }
 
 nav a:hover{
   color:#2563eb;
+}
+
+/* ปุ่ม "หางานกับเรา!" ในแถบ Menu Bar */
+.nav-career-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color:white !important;
+  padding:8px 22px;
+  border-radius:30px;
+  font-weight:700 !important;
+  box-shadow:0 4px 14px rgba(37, 99, 235, 0.35);
+  transition:all 0.3s ease !important;
+  margin:0 10px;
+}
+
+.nav-career-btn:hover{
+  transform:translateY(-2px) scale(1.04);
+  box-shadow:0 6px 20px rgba(37, 99, 235, 0.5);
+  background:linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+.nav-career-btn:active{
+  transform:translateY(0) scale(0.98);
 }
 
 .hero{
@@ -198,72 +228,6 @@ iframe{
   margin-bottom:14px;
 }
 
-/* Career Section & Animated Button Styling */
-.career-card{
-  text-align:center;
-  background:linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
-  border:2px solid #e2e8f0;
-}
-
-.career-sub{
-  color:#64748b;
-  font-size:17px;
-  margin-bottom:30px;
-}
-
-.btn-career{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  padding:18px 48px;
-  font-size:20px;
-  font-weight:700;
-  color:#ffffff;
-  background:linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  border:none;
-  border-radius:50px;
-  text-decoration:none;
-  box-shadow:0 10px 25px rgba(37, 99, 235, 0.35);
-  transition:all 0.4s ease;
-  position:relative;
-  overflow:hidden;
-}
-
-.btn-career:hover{
-  transform:translateY(-4px) scale(1.03);
-  box-shadow:0 15px 35px rgba(37, 99, 235, 0.5);
-  background:linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
-}
-
-.btn-career:active{
-  transform:translateY(-1px) scale(0.99);
-}
-
-.btn-career::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition:0.6s;
-}
-
-.btn-career:hover::before{
-  left:100%;
-}
-
-.btn-icon{
-  display:inline-block;
-  transition:transform 0.3s ease;
-}
-
-.btn-career:hover .btn-icon{
-  transform:translateX(6px);
-}
-
 footer{
   background:#0f172a;
   color:white;
@@ -296,19 +260,24 @@ footer{
     font-size:16px;
   }
 
+  nav{
+    padding:12px;
+    gap:10px;
+  }
+
   nav a{
     display:inline-block;
-    margin:8px 10px;
+    margin:5px 6px;
+    font-size:14px;
+  }
+
+  .nav-career-btn{
+    padding:6px 16px;
+    font-size:14px;
   }
 
   .card{
     padding:25px;
-  }
-
-  .btn-career{
-    width:100%;
-    padding:16px 24px;
-    font-size:18px;
   }
 
 }
@@ -357,7 +326,7 @@ Professional Workforce & Employment Solutions
 <a href="#services" id="navServices">Services</a>
 <a href="#presentation" id="navPresentation">Presentation</a>
 <a href="#contact" id="navContact">Contact</a>
-<a href="#careers" id="navCareers">Careers</a>
+<a href="https://shorturl.asia/5PGsH" target="_blank" rel="noopener noreferrer" class="nav-career-btn" id="navCareers">หางานกับเรา! ✨</a>
 
 </nav>
 
@@ -499,27 +468,6 @@ referrerpolicy="no-referrer-when-downgrade">
 
 </section>
 
-<section id="careers">
-
-<div class="card career-card">
-
-<h2 id="careerTitle">
-Join Our Team
-</h2>
-
-<p class="career-sub" id="careerSub">
-Looking for new job opportunities? Click below to apply now!
-</p>
-
-<a href="https://shorturl.asia/5PGsH" target="_blank" rel="noopener noreferrer" class="btn-career">
-<span id="careerBtnText">Apply Now</span>
-<span class="btn-icon">➔</span>
-</a>
-
-</div>
-
-</section>
-
 </div>
 
 <footer id="footerText">
@@ -569,7 +517,7 @@ navAbout:"About",
 navServices:"Services",
 navPresentation:"Presentation",
 navContact:"Contact",
-navCareers:"Careers",
+navCareers:"Apply Jobs! ✨",
 heroTitle:"Professional Employment Solutions",
 heroText:"Providing workforce recruitment, labor management, foreign worker services, and industrial employment support with professionalism and reliability.",
 aboutTitle:"About Us",
@@ -584,9 +532,6 @@ service6:"Translation & 24 Hour Assistance",
 presentationTitle:"Company Presentation",
 presentationText:"Company profile and presentation slides.",
 contactTitle:"Contact",
-careerTitle:"Careers & Application",
-careerSub:"Looking for new job opportunities? Click below to apply now!",
-careerBtnText:"Apply Now",
 footerText:"© 2026 XIANG LI EMPLOYMENT (THAILAND) CO., LTD."
 },
 
@@ -596,7 +541,7 @@ navAbout:"เกี่ยวกับเรา",
 navServices:"บริการ",
 navPresentation:"พรีเซนเทชั่น",
 navContact:"ติดต่อ",
-navCareers:"สมัครงาน",
+navCareers:"หางานกับเรา! ✨",
 heroTitle:"บริการจัดหาแรงงานระดับมืออาชีพ",
 heroText:"ให้บริการจัดหาแรงงาน บริหารแรงงานต่างด้าว และสนับสนุนงานอุตสาหกรรมอย่างครบวงจร",
 aboutTitle:"เกี่ยวกับเรา",
@@ -611,9 +556,6 @@ service6:"บริการล่ามและช่วยเหลือ 24 
 presentationTitle:"พรีเซนเทชั่นบริษัท",
 presentationText:"ข้อมูลบริษัทและเอกสารนำเสนอ",
 contactTitle:"ติดต่อ",
-careerTitle:"สมัครงาน",
-careerSub:"กำลังมองหาโอกาสในการทำงานใหม่ๆ อยู่ใช่ไหม? กดปุ่มด้านล่างเพื่อกรอกใบสมัครได้เลย!",
-careerBtnText:"สนใจสมัครงานคลิกที่นี่",
 footerText:"© 2026 บริษัท เซียงลี่ เอ็มพลอยเม้นท์ (ประเทศไทย) จำกัด"
 },
 
@@ -623,7 +565,7 @@ navAbout:"关于我们",
 navServices:"服务项目",
 navPresentation:"公司介绍",
 navContact:"联系我们",
-navCareers:"人才招聘",
+navCareers:"申请工作！✨",
 heroTitle:"专业劳务解决方案",
 heroText:"为企业提供劳动力招聘、外籍劳工管理及工业支持服务。",
 aboutTitle:"关于我们",
@@ -638,9 +580,6 @@ service6:"翻译与24小时协助服务",
 presentationTitle:"公司介绍",
 presentationText:"公司资料与演示文稿",
 contactTitle:"联系我们",
-careerTitle:"人才招聘",
-careerSub:"寻找新的工作机会？点击下方按钮立即申请！",
-careerBtnText:"立即申请职位",
 footerText:"© 2026 祥利（泰国）职业介绍有限公司"
 }
 
@@ -675,10 +614,6 @@ document.getElementById("presentationTitle").innerHTML = translations[lang].pres
 document.getElementById("presentationText").innerHTML = translations[lang].presentationText;
 
 document.getElementById("contactTitle").innerHTML = translations[lang].contactTitle;
-
-document.getElementById("careerTitle").innerHTML = translations[lang].careerTitle;
-document.getElementById("careerSub").innerHTML = translations[lang].careerSub;
-document.getElementById("careerBtnText").innerHTML = translations[lang].careerBtnText;
 
 document.getElementById("footerText").innerHTML = translations[lang].footerText;
 
