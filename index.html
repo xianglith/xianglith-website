@@ -6,29 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XIANG LI EMPLOYMENT (THAILAND) CO., LTD.</title>
 
-    <!-- Google Fonts: Poppins & Kanit -->
+    <!-- Google Fonts: Plus Jakarta Sans & Kanit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --primary-light: #eff6ff;
-            --navy-dark: #0f172a;
-            --navy-surface: #1e293b;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --bg-body: #f8fafc;
+            --brand-blue: #2563eb;
+            --brand-blue-hover: #1d4ed8;
+            --brand-accent: #38bdf8;
+            --navy-dark: #090d16;
+            --navy-card: #0f172a;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-light: #94a3b8;
+            --bg-main: #f8fafc;
             --bg-card: #ffffff;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
-            --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
-            --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
+            --border-light: #e2e8f0;
+            --shadow-subtle: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+            --shadow-hover: 0 20px 40px -15px rgba(37, 99, 235, 0.15);
+            --radius-xl: 24px;
             --radius-lg: 16px;
             --radius-md: 12px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -42,22 +43,36 @@
         }
 
         body {
-            font-family: 'Poppins', 'Kanit', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', 'Kanit', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
             line-height: 1.6;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- Header & Topbar --- */
+        /* Background Deco */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+            background-size: 32px 32px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* --- Header & Glass Navigation --- */
         header {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(12px);
-            color: white;
+            background: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .topbar {
@@ -76,321 +91,392 @@
         }
 
         .logo-section img {
-            width: 60px;
-            height: auto;
+            height: 48px;
+            width: auto;
             border-radius: 8px;
             object-fit: contain;
         }
 
         .company-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
             color: #ffffff;
         }
 
         .company-sub {
-            color: #94a3b8;
-            font-size: 13px;
+            color: var(--text-light);
+            font-size: 12px;
             font-weight: 400;
         }
 
+        /* Custom Lang Switcher Pill */
         .lang-switch {
             display: flex;
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.06);
             padding: 4px;
-            border-radius: 10px;
-            gap: 4px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .lang-switch button {
             border: none;
             background: transparent;
             color: #cbd5e1;
-            padding: 6px 12px;
-            border-radius: 6px;
+            padding: 6px 14px;
+            border-radius: 100px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 12px;
             transition: var(--transition);
-        }
-
-        .lang-switch button:hover {
-            color: white;
         }
 
         .lang-switch button.active {
-            background: var(--primary);
+            background: var(--brand-blue);
             color: white;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
         }
 
-        /* --- Navigation --- */
+        /* Navbar Layout */
         nav {
             background: #ffffff;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 24px;
-            padding: 14px 24px;
+            border-bottom: 1px solid var(--border-light);
+            padding: 12px 24px;
             position: sticky;
-            top: 73px;
+            top: 81px;
             z-index: 999;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-subtle);
         }
 
-        nav a {
+        .nav-container {
+            max-width: 1280px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            color: #475569;
-            font-weight: 500;
-            font-size: 15px;
-            transition: var(--transition);
-            position: relative;
-            padding: 4px 0;
-        }
-
-        nav a:not(.nav-career-btn):hover {
-            color: var(--primary);
-        }
-
-        nav a:not(.nav-career-btn)::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background: var(--primary);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 14px;
             transition: var(--transition);
         }
 
-        nav a:not(.nav-career-btn):hover::after {
-            width: 100%;
+        .nav-links a:hover {
+            color: var(--brand-blue);
+        }
+
+        .nav-cta-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .nav-career-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--brand-blue) 0%, #1e40af 100%);
             color: white !important;
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 600 !important;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
-            transition: var(--transition) !important;
+            padding: 10px 22px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+            transition: var(--transition);
+            text-decoration: none;
         }
 
         .nav-career-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
         }
 
-        /* --- Hero Section --- */
+        /* --- Hero Section with Glow & Glass Stats --- */
         .hero {
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.85) 100%),
-                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+            position: relative;
+            background: linear-gradient(180deg, #090d16 0%, #0f172a 100%);
             color: white;
+            padding: 120px 24px 140px;
+            overflow: hidden;
             text-align: center;
-            padding: 120px 24px;
-            display: flex;
-            flex-direction: column;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 860px;
+            margin: auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--brand-accent);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
         }
 
         .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
             margin-bottom: 20px;
-            line-height: 1.2;
-            max-width: 900px;
-            letter-spacing: -0.01em;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            max-width: 750px;
             font-size: 18px;
-            color: #cbd5e1;
-            font-weight: 300;
+            color: #94a3b8;
+            font-weight: 400;
+            max-width: 680px;
+            margin: 0 auto 40px;
             line-height: 1.7;
         }
 
-        /* --- Container & Cards --- */
+        /* Hero Stats Grid */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 40px auto 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(8px);
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* --- Main Layout & Card Section --- */
         .container {
             max-width: 1200px;
-            margin: auto;
-            padding: 60px 24px;
+            margin: -60px auto 60px;
+            padding: 0 24px;
+            position: relative;
+            z-index: 10;
         }
 
         .card {
             background: var(--bg-card);
+            border-radius: var(--radius-xl);
             padding: 48px;
-            border-radius: var(--radius-lg);
             margin-bottom: 40px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-subtle);
+            border: 1px solid var(--border-light);
             transition: var(--transition);
         }
 
-        .card:hover {
-            box-shadow: var(--shadow-md);
+        .section-header {
+            margin-bottom: 32px;
+        }
+
+        .section-tag {
+            color: var(--brand-blue);
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+            display: block;
         }
 
         h2 {
-            font-size: 30px;
-            font-weight: 700;
-            margin-bottom: 24px;
+            font-size: 32px;
+            font-weight: 800;
             color: var(--navy-dark);
-            position: relative;
-            display: inline-block;
+            letter-spacing: -0.02em;
         }
 
-        h2::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-            margin-top: 8px;
-        }
-
-        /* --- Services Grid --- */
+        /* --- Modern Service Cards Grid --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 24px;
-            margin-top: 32px;
         }
 
-        .service-box {
+        .service-card {
             background: #ffffff;
-            padding: 28px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            font-size: 16px;
-            color: var(--navy-dark);
-            display: flex;
-            align-items: center;
-            gap: 16px;
+            border: 1px solid var(--border-light);
+            padding: 32px;
+            border-radius: var(--radius-lg);
             transition: var(--transition);
             position: relative;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .service-box::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background: var(--primary);
-            transition: var(--transition);
-        }
-
-        .service-box:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
             border-color: rgba(37, 99, 235, 0.3);
-            background: var(--primary-light);
         }
 
-        .service-icon {
-            width: 44px;
-            height: 44px;
-            background: var(--primary-light);
-            color: var(--primary);
-            border-radius: 10px;
+        .service-icon-wrapper {
+            width: 52px;
+            height: 52px;
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--brand-blue);
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
+            font-size: 22px;
+            margin-bottom: 20px;
         }
 
-        /* --- Presentation / Slideshow --- */
-        .slideshow-container {
-            margin-top: 24px;
+        .service-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 8px;
+        }
+
+        /* --- Presentation Slideshow --- */
+        .slideshow-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
             overflow: hidden;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-            background: #000;
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
+            background: var(--navy-dark);
         }
 
-        .slideshow-container img {
+        .slideshow-wrapper img {
             width: 100%;
+            height: auto;
             display: block;
-            border-radius: var(--radius-md);
-            transition: opacity 0.8s ease, transform 6s ease;
+            transition: opacity 0.8s ease;
         }
 
-        /* --- Contact Section --- */
+        /* --- Contact Block & Map Layout --- */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 32px;
-            margin-top: 24px;
         }
 
-        .contact-info {
+        .contact-card-list {
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
 
-        .contact-item {
+        .contact-card {
             display: flex;
             align-items: flex-start;
-            gap: 14px;
-            padding: 16px;
+            gap: 16px;
+            padding: 20px;
             background: #f8fafc;
+            border: 1px solid var(--border-light);
             border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
         }
 
-        .contact-item-icon {
-            color: var(--primary);
-            margin-top: 2px;
+        .contact-card-icon {
+            width: 40px;
+            height: 40px;
+            background: #ffffff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            color: var(--brand-blue);
+            flex-shrink: 0;
         }
 
-        .contact-item strong {
+        .contact-card strong {
             display: block;
-            color: var(--navy-dark);
-            font-size: 14px;
+            font-size: 13px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 2px;
         }
 
-        .contact-item span, .contact-item address {
+        .contact-card span, .contact-card address {
             font-style: normal;
-            color: var(--text-muted);
             font-size: 15px;
+            font-weight: 600;
+            color: var(--navy-dark);
         }
 
-        iframe {
+        .map-wrapper iframe {
             width: 100%;
             height: 100%;
-            min-height: 320px;
+            min-height: 340px;
             border: none;
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-lg);
         }
 
         /* --- Footer --- */
         footer {
             background: var(--navy-dark);
-            color: #94a3b8;
-            text-align: center;
+            color: var(--text-light);
             padding: 40px 24px;
+            text-align: center;
             font-size: 14px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* --- Responsive Design --- */
+        /* --- Responsive Styles --- */
         @media (max-width: 992px) {
             .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-stats {
                 grid-template-columns: 1fr;
             }
         }
@@ -406,32 +492,16 @@
                 align-self: flex-end;
             }
 
-            .company-title {
-                font-size: 16px;
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
             }
 
-            .hero {
-                padding: 80px 20px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            nav {
-                padding: 12px;
-                gap: 12px;
+            .nav-links {
                 overflow-x: auto;
-                justify-content: flex-start;
-            }
-
-            nav a {
-                font-size: 14px;
-                white-space: nowrap;
+                width: 100%;
+                padding-bottom: 8px;
             }
 
             .card {
@@ -443,6 +513,9 @@
 
 <body>
 
+    <div class="bg-pattern"></div>
+
+    <!-- Header Section -->
     <header>
         <div class="topbar">
             <div class="logo-section">
@@ -461,114 +534,159 @@
         </div>
     </header>
 
+    <!-- Navbar Section -->
     <nav>
-        <a href="#about" id="navAbout">About</a>
-        <a href="#services" id="navServices">Services</a>
-        <a href="#presentation" id="navPresentation">Presentation</a>
-        <a href="#contact" id="navContact">Contact</a>
-        <a href="https://shorturl.asia/5PGsH" target="_blank" rel="noopener noreferrer" class="nav-career-btn" id="navCareers">
-            <span>หางานและสมัครทันที!</span> ✨
-        </a>
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#about" id="navAbout">About Us</a>
+                <a href="#services" id="navServices">Services</a>
+                <a href="#presentation" id="navPresentation">Presentation</a>
+                <a href="#contact" id="navContact">Contact</a>
+            </div>
+            <div class="nav-cta-group">
+                <a href="https://shorturl.asia/5PGsH" target="_blank" rel="noopener noreferrer" class="nav-career-btn" id="navCareers">
+                    <span>หางานและสมัครทันที!</span> ✨
+                </a>
+            </div>
+        </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <h1 id="heroTitle">Professional Employment Solutions</h1>
-        <p id="heroText">Providing workforce recruitment, labor management, foreign worker services, and industrial employment support with professionalism and reliability.</p>
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <div class="hero-badge">⚡ Licensed & Trusted Employment Agency</div>
+            <h1 id="heroTitle">Professional Employment Solutions</h1>
+            <p id="heroText">Providing workforce recruitment, labor management, foreign worker services, and industrial employment support with professionalism and reliability.</p>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat-card">
+                <span class="stat-number">10,000+</span>
+                <span class="stat-label">Workforce Deployed</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Legal Compliance</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Operational Support</span>
+            </div>
+        </div>
     </section>
 
+    <!-- Main Content Container -->
     <div class="container">
 
+        <!-- About Us Card -->
         <section id="about">
             <div class="card">
-                <h2 id="aboutTitle">About Us</h2>
-                <p id="aboutText">
+                <div class="section-header">
+                    <span class="section-tag">WHO WE ARE</span>
+                    <h2 id="aboutTitle">About Us</h2>
+                </div>
+                <p id="aboutText" style="color: var(--text-secondary); font-size: 16px; line-height: 1.8;">
                     XIANG LI EMPLOYMENT (THAILAND) CO., LTD. is a professional labor contracting and workforce management company dedicated to providing high-quality workforce solutions for factories and business operators in Thailand.
                 </p>
             </div>
         </section>
 
+        <!-- Services Grid -->
         <section id="services">
             <div class="card">
-                <h2 id="servicesTitle">Our Services</h2>
+                <div class="section-header">
+                    <span class="section-tag">WHAT WE OFFER</span>
+                    <h2 id="servicesTitle">Our Services</h2>
+                </div>
 
                 <div class="services-grid">
-                    <div class="service-box">
-                        <div class="service-icon">🏭</div>
-                        <span id="service1">Factory Workforce Recruitment</span>
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">🏭</div>
+                        <h3 id="service1">Factory Workforce Recruitment</h3>
                     </div>
 
-                    <div class="service-box">
-                        <div class="service-icon">🌐</div>
-                        <span id="service2">Foreign Worker Import Services</span>
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">🌐</div>
+                        <h3 id="service2">Foreign Worker Import Services</h3>
                     </div>
 
-                    <div class="service-box">
-                        <div class="service-icon">📄</div>
-                        <span id="service3">Visa & Work Permit Processing</span>
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">📄</div>
+                        <h3 id="service3">Visa & Work Permit Processing</h3>
                     </div>
 
-                    <div class="service-box">
-                        <div class="service-icon">👥</div>
-                        <span id="service4">HR & Labor Management Support</span>
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">👥</div>
+                        <h3 id="service4">HR & Labor Management Support</h3>
                     </div>
 
-                    <div class="service-box">
-                        <div class="service-icon">🚌</div>
-                        <span id="service5">Worker Transportation & Accommodation</span>
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">🚌</div>
+                        <h3 id="service5">Worker Transportation & Accommodation</h3>
                     </div>
 
-                    <div class="service-box">
-                        <div class="service-icon">🎧</div>
-                        <span id="service6">Translation & 24 Hour Assistance</span>
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">🎧</div>
+                        <h3 id="service6">Translation & 24 Hour Assistance</h3>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Presentation Showcase -->
         <section id="presentation">
             <div class="card">
-                <h2 id="presentationTitle">Company Presentation</h2>
-                <p id="presentationText">Company profile and presentation slides.</p>
-                <div class="slideshow-container">
+                <div class="section-header">
+                    <span class="section-tag">COMPANY PROFILE</span>
+                    <h2 id="presentationTitle">Company Presentation</h2>
+                </div>
+                <p id="presentationText" style="color: var(--text-secondary); margin-bottom: 24px;">Company profile and presentation slides.</p>
+
+                <div class="slideshow-wrapper">
                     <img id="slideShow" src="slides/slide1.jpg" alt="Presentation Slide">
                 </div>
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact">
             <div class="card">
-                <h2 id="contactTitle">Contact Us</h2>
+                <div class="section-header">
+                    <span class="section-tag">GET IN TOUCH</span>
+                    <h2 id="contactTitle">Contact Us</h2>
+                </div>
 
                 <div class="contact-grid">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-item-icon">✉️</div>
+                    <div class="contact-card-list">
+                        <div class="contact-card">
+                            <div class="contact-card-icon">✉️</div>
                             <div>
-                                <strong>Email</strong>
+                                <strong>Email Address</strong>
                                 <span>official@xianglith.com</span>
                             </div>
                         </div>
 
-                        <div class="contact-item">
-                            <div class="contact-item-icon">📞</div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">📞</div>
                             <div>
-                                <strong>Tel</strong>
+                                <strong>Phone Support</strong>
                                 <span>081-727-8428, 062-197-8666</span>
                             </div>
                         </div>
 
-                        <div class="contact-item">
-                            <div class="contact-item-icon">💬</div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">💬</div>
                             <div>
-                                <strong>WeChat ID</strong>
+                                <strong>WeChat Official</strong>
                                 <span>s15370055518</span>
                             </div>
                         </div>
 
-                        <div class="contact-item">
-                            <div class="contact-item-icon">📍</div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">📍</div>
                             <div>
-                                <strong>Address</strong>
+                                <strong>Office Location</strong>
                                 <address>
                                     123/715 Moo 3, Bo Win Subdistrict,<br>
                                     Si Racha District, Chonburi 20230 Thailand
@@ -577,7 +695,7 @@
                         </div>
                     </div>
 
-                    <div class="contact-map">
+                    <div class="map-wrapper">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d944.0913840577178!2d101.09428748439305!3d13.03430495574008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102c50025995e7b%3A0x388dcf139271ad1f!2z4Lia4Lij4Li04Lip4Lix4LiXIOC4iOC4seC4lOC4q-C4suC4h-C4suC4mSDguYDguIvguLXguKLguIcg4Lil4Li1ICjguYTguJfguKLguYHguKXguJnguJTguYwp!5e0!3m2!1sen!2sth!4v1780042292202!5m2!1sen!2sth"
                             allowfullscreen=""
@@ -591,10 +709,12 @@
 
     </div>
 
+    <!-- Footer -->
     <footer id="footerText">
         © 2026 XIANG LI EMPLOYMENT (THAILAND) CO., LTD. All Rights Reserved.
     </footer>
 
+    <!-- Script Handling Slides & Multi-language -->
     <script>
         const slides = [
             "slides/slide1.jpg",
@@ -619,7 +739,7 @@
         const translations = {
             en: {
                 subtitle: "Professional Workforce & Employment Solutions",
-                navAbout: "About",
+                navAbout: "About Us",
                 navServices: "Services",
                 navPresentation: "Presentation",
                 navContact: "Contact",
