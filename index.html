@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -186,7 +185,7 @@ h2{
   border-radius:20px;
   opacity:1;
   transition:opacity 1.2s ease-in-out,
-             transform 6s ease;
+              transform 6s ease;
 }
 
 iframe{
@@ -197,6 +196,72 @@ iframe{
 
 .contact-item{
   margin-bottom:14px;
+}
+
+/* Career Section & Animated Button Styling */
+.career-card{
+  text-align:center;
+  background:linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+  border:2px solid #e2e8f0;
+}
+
+.career-sub{
+  color:#64748b;
+  font-size:17px;
+  margin-bottom:30px;
+}
+
+.btn-career{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:18px 48px;
+  font-size:20px;
+  font-weight:700;
+  color:#ffffff;
+  background:linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border:none;
+  border-radius:50px;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(37, 99, 235, 0.35);
+  transition:all 0.4s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.btn-career:hover{
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:0 15px 35px rgba(37, 99, 235, 0.5);
+  background:linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+.btn-career:active{
+  transform:translateY(-1px) scale(0.99);
+}
+
+.btn-career::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition:0.6s;
+}
+
+.btn-career:hover::before{
+  left:100%;
+}
+
+.btn-icon{
+  display:inline-block;
+  transition:transform 0.3s ease;
+}
+
+.btn-career:hover .btn-icon{
+  transform:translateX(6px);
 }
 
 footer{
@@ -240,6 +305,12 @@ footer{
     padding:25px;
   }
 
+  .btn-career{
+    width:100%;
+    padding:16px 24px;
+    font-size:18px;
+  }
+
 }
 
 </style>
@@ -254,7 +325,7 @@ footer{
 
 <div class="logo-section">
 
-<img src="XIANG LI LOGO.png">
+<img src="XIANG LI LOGO.png" alt="Logo">
 
 <div>
 
@@ -286,6 +357,7 @@ Professional Workforce & Employment Solutions
 <a href="#services" id="navServices">Services</a>
 <a href="#presentation" id="navPresentation">Presentation</a>
 <a href="#contact" id="navContact">Contact</a>
+<a href="#careers" id="navCareers">Careers</a>
 
 </nav>
 
@@ -375,8 +447,7 @@ Company profile and presentation slides.
 
 <div class="slideshow-container">
 
-<img id="slideShow"
-src="slides/slide1.jpg">
+<img id="slideShow" src="slides/slide1.jpg" alt="Presentation Slide">
 
 </div>
 
@@ -428,6 +499,27 @@ referrerpolicy="no-referrer-when-downgrade">
 
 </section>
 
+<section id="careers">
+
+<div class="card career-card">
+
+<h2 id="careerTitle">
+Join Our Team
+</h2>
+
+<p class="career-sub" id="careerSub">
+Looking for new job opportunities? Click below to apply now!
+</p>
+
+<a href="https://shorturl.asia/5PGsH" target="_blank" rel="noopener noreferrer" class="btn-career">
+<span id="careerBtnText">Apply Now</span>
+<span class="btn-icon">➔</span>
+</a>
+
+</div>
+
+</section>
+
 </div>
 
 <footer id="footerText">
@@ -445,8 +537,7 @@ const slides = [
 
 let currentSlide = 0;
 
-const slideImage =
-document.getElementById("slideShow");
+const slideImage = document.getElementById("slideShow");
 
 setInterval(() => {
 
@@ -478,6 +569,7 @@ navAbout:"About",
 navServices:"Services",
 navPresentation:"Presentation",
 navContact:"Contact",
+navCareers:"Careers",
 heroTitle:"Professional Employment Solutions",
 heroText:"Providing workforce recruitment, labor management, foreign worker services, and industrial employment support with professionalism and reliability.",
 aboutTitle:"About Us",
@@ -492,6 +584,9 @@ service6:"Translation & 24 Hour Assistance",
 presentationTitle:"Company Presentation",
 presentationText:"Company profile and presentation slides.",
 contactTitle:"Contact",
+careerTitle:"Careers & Application",
+careerSub:"Looking for new job opportunities? Click below to apply now!",
+careerBtnText:"Apply Now",
 footerText:"© 2026 XIANG LI EMPLOYMENT (THAILAND) CO., LTD."
 },
 
@@ -501,6 +596,7 @@ navAbout:"เกี่ยวกับเรา",
 navServices:"บริการ",
 navPresentation:"พรีเซนเทชั่น",
 navContact:"ติดต่อ",
+navCareers:"สมัครงาน",
 heroTitle:"บริการจัดหาแรงงานระดับมืออาชีพ",
 heroText:"ให้บริการจัดหาแรงงาน บริหารแรงงานต่างด้าว และสนับสนุนงานอุตสาหกรรมอย่างครบวงจร",
 aboutTitle:"เกี่ยวกับเรา",
@@ -515,6 +611,9 @@ service6:"บริการล่ามและช่วยเหลือ 24 
 presentationTitle:"พรีเซนเทชั่นบริษัท",
 presentationText:"ข้อมูลบริษัทและเอกสารนำเสนอ",
 contactTitle:"ติดต่อ",
+careerTitle:"สมัครงาน",
+careerSub:"กำลังมองหาโอกาสในการทำงานใหม่ๆ อยู่ใช่ไหม? กดปุ่มด้านล่างเพื่อกรอกใบสมัครได้เลย!",
+careerBtnText:"สนใจสมัครงานคลิกที่นี่",
 footerText:"© 2026 บริษัท เซียงลี่ เอ็มพลอยเม้นท์ (ประเทศไทย) จำกัด"
 },
 
@@ -524,6 +623,7 @@ navAbout:"关于我们",
 navServices:"服务项目",
 navPresentation:"公司介绍",
 navContact:"联系我们",
+navCareers:"人才招聘",
 heroTitle:"专业劳务解决方案",
 heroText:"为企业提供劳动力招聘、外籍劳工管理及工业支持服务。",
 aboutTitle:"关于我们",
@@ -538,6 +638,9 @@ service6:"翻译与24小时协助服务",
 presentationTitle:"公司介绍",
 presentationText:"公司资料与演示文稿",
 contactTitle:"联系我们",
+careerTitle:"人才招聘",
+careerSub:"寻找新的工作机会？点击下方按钮立即申请！",
+careerBtnText:"立即申请职位",
 footerText:"© 2026 祥利（泰国）职业介绍有限公司"
 }
 
@@ -551,6 +654,7 @@ document.getElementById("navAbout").innerHTML = translations[lang].navAbout;
 document.getElementById("navServices").innerHTML = translations[lang].navServices;
 document.getElementById("navPresentation").innerHTML = translations[lang].navPresentation;
 document.getElementById("navContact").innerHTML = translations[lang].navContact;
+document.getElementById("navCareers").innerHTML = translations[lang].navCareers;
 
 document.getElementById("heroTitle").innerHTML = translations[lang].heroTitle;
 document.getElementById("heroText").innerHTML = translations[lang].heroText;
@@ -572,6 +676,10 @@ document.getElementById("presentationText").innerHTML = translations[lang].prese
 
 document.getElementById("contactTitle").innerHTML = translations[lang].contactTitle;
 
+document.getElementById("careerTitle").innerHTML = translations[lang].careerTitle;
+document.getElementById("careerSub").innerHTML = translations[lang].careerSub;
+document.getElementById("careerBtnText").innerHTML = translations[lang].careerBtnText;
+
 document.getElementById("footerText").innerHTML = translations[lang].footerText;
 
 }
@@ -580,4 +688,3 @@ document.getElementById("footerText").innerHTML = translations[lang].footerText;
 
 </body>
 </html>
-```
